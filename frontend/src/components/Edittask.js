@@ -15,7 +15,7 @@ const Edittask = ({ setStep, data }) => {
     }
 
     try {
-      const response = await axios.patch(`http://localhost:3010/task/${data._id}`, {
+      const response = await axios.patch(`https://daily-task-manager-qsfq.onrender.com/task/${data._id}`, {
         title: taskTitle,
         description: taskDescription,
         status: taskStatus,

@@ -17,7 +17,7 @@ const TaskList = () => {
 
   const getTask = async () => {
     try {
-      const response = await axios.get("http://localhost:3010/task");
+      const response = await axios.get("https://daily-task-manager-qsfq.onrender.com/task");
       if (response.status === 200) {
         setTasks(response.data);
       }
@@ -41,7 +41,7 @@ const TaskList = () => {
   const updateTaskStatus = async (id) => {
     setError('');
     try {
-      const response = await axios.patch(`http://localhost:3010/task/complete/${id}`);
+      const response = await axios.patch(`https://daily-task-manager-qsfq.onrender.com/task/complete/${id}`);
       if (response.status === 200) {
         setSuccessMessage('Task Completed successfully!');
         setTimeout(() => {
@@ -66,7 +66,7 @@ const TaskList = () => {
         return; // Do nothing if the user cancels the deletion
       }
   
-      const response = await axios.delete(`http://localhost:3010/task/${id}`);
+      const response = await axios.delete(`https://daily-task-manager-qsfq.onrender.com/task/${id}`);
       if (response.status === 200) {
         setSuccessMessage(response.data.message ? response.data.message : 'Task Deleted successfully!');
         setTimeout(() => {
@@ -84,7 +84,7 @@ const TaskList = () => {
   const deleteAllTasks = async () => {
     setError('');
     try {
-      const response = await axios.delete('http://localhost:3010/task/');
+      const response = await axios.delete('https://daily-task-manager-qsfq.onrender.com/task/');
       if (response.status === 200) {
         setSuccessMessage('All tasks deleted successfully!');
         setTimeout(() => {

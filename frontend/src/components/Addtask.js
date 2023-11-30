@@ -16,7 +16,7 @@ const AddTask = ({ setStep }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3010/task", {
+      const response = await axios.post("https://daily-task-manager-qsfq.onrender.com/task", {
         title: taskTitle,
         description: taskDescription,
       });
